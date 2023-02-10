@@ -1,0 +1,1665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <link rel="stylesheet" href="css/style.min.css">
+    <title>Data Centers</title>
+</head>
+<body>
+<div id="wrapper">
+    <header class="b-header" style="padding-bottom:0">
+    <div class="container">
+        <div class="navbar navbar-expand-xl navbar-light">
+
+            <a href="https://ultramining.com/" class="navbar-brand">
+                <img loading="lazy" width="190" height="28" src="https://ultramining.com/default/img/logo.svg" alt="Ultramining">
+            </a>
+
+            <a href="https://ultramining.com/news/category/btc-halving-news/" class="btn btn-primary btn-sm d-none d-md-block b-header__news-category">
+                <img loading="lazy" width="14" height="20" src="https://ultramining.com/default/img/icons/hot-topic.svg" alt="BTC Halving News">
+                <span>BTC Halving news</span>
+            </a>
+
+            <nav class="collapse navbar-collapse b-main-nav" id="main-nav" instance="0">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://ultramining.com/news/">Новости</a>
+                    </li>
+                    <li class="nav-item dropdown dropdown-hovered">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Рейтинг пулов</a>
+                        <div class="dropdown-menu">
+                            <div class="js-scrollbar" style="max-height: 320px; overflow: hidden; outline: none;" data-scrollbar="true" tabindex="-1"><div class="scroll-content">
+                                <a class="dropdown-item" href="https://ultramining.com/ratings/bitcoin/">Bitcoin</a>
+                                <a class="dropdown-item" href="https://ultramining.com/ratings/litecoin/">Litecoin</a>
+                                <a class="dropdown-item" href="https://ultramining.com/ratings/ethereum-classic/">Ethereum Classic</a>
+                                <a class="dropdown-item" href="https://ultramining.com/ratings/monero/">Monero</a>
+                                <a class="dropdown-item" href="https://ultramining.com/ratings/kadena/">Kadena</a>
+                            </div><div class="scrollbar-track scrollbar-track-x show" style="display: none;"><div class="scrollbar-thumb scrollbar-thumb-x"></div></div><div class="scrollbar-track scrollbar-track-y show" style="display: none;"><div class="scrollbar-thumb scrollbar-thumb-y"></div></div></div>
+                        </div>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="https://ultramining.com/data-centers/">Дата центры</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://ultramining.com/hardware/">Оборудование</a>
+                    </li>
+
+                </ul>
+            </nav>
+
+            <div class="btn-group dropdown-hovered b-change-lang">
+                <button class="btn dropdown-toggle" data-toggle="dropdown">ru</button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="https://ultramining.com/en/data-centers/">en</a>
+                </div>
+            </div>
+
+            <button class="navbar-toggler b-navbar-toggler" data-toggle="collapse" data-target="#main-nav" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+
+        <a href="https://ultramining.com/news/category/btc-halving-news/" class="btn btn-primary btn-sm b-header__news-category d-md-none">
+            <img loading="lazy" width="14" height="20" src="https://ultramining.com/default/img/icons/hot-topic.svg" alt="BTC Halving News">
+            <span>BTC Halving news</span>
+        </a>
+
+        <div class="b-header__bottom">
+            <a rel="nofollow" target="_blank" href="https://accounts.binance.com/ru-UA/register?ref=OHR3IMQ3" class="btn btn-outline-dark btn-sm order-xl-last b-header__ref-link">
+                <img loading="lazy" width="80" height="16" src="https://ultramining.com/default/img/binance.svg" alt="binance">
+            </a>
+            <div class="b-price-schedule">
+                <a rel="nofollow" target="_blank" href="https://accounts.binance.com/ru-UA/register?ref=OHR3IMQ3" class="b-price-schedule__inner">
+                    <div class="b-price-schedule__item">
+                        <figure class="b-price-schedule__img-wrap">
+                            <img loading="lazy" width="20" height="20" src="https://ultramining.com/storage/1036/63bd743585fac.svg" alt="Bitcoin">
+                        </figure>
+                        <strong class="b-price-schedule__value">$22 728.60</strong>
+                        <span class="text-danger b-price-schedule__change">-0.39%</span>
+                    </div>
+                    <div class="b-price-schedule__divider">|</div>
+                    <div class="b-price-schedule__item">
+                        <figure class="b-price-schedule__img-wrap">
+                            <img loading="lazy" width="20" height="20" src="https://ultramining.com/storage/468/62d7d2c57f875.svg" alt="Dogecoin">
+                        </figure>
+                        <strong class="b-price-schedule__value">$0.084550</strong>
+                        <span class="text-danger b-price-schedule__change">-2.4%</span>
+                    </div>
+                    <div class="b-price-schedule__divider">|</div>
+                    <div class="b-price-schedule__item">
+                        <figure class="b-price-schedule__img-wrap">
+                            <img loading="lazy" width="20" height="20" src="https://ultramining.com/storage/443/62d7bb652c878.svg" alt="Litecoin">
+                        </figure>
+                        <strong class="b-price-schedule__value">$87.80</strong>
+                        <span class="text-danger b-price-schedule__change">-1.06%</span>
+                    </div>
+                    <div class="b-price-schedule__divider">|</div>
+                    <div class="b-price-schedule__item">
+                        <figure class="b-price-schedule__img-wrap">
+                            <img loading="lazy" width="20" height="20" src="https://ultramining.com/storage/466/62d7d28d473cf.svg" alt="Bitcoin Cash">
+                        </figure>
+                        <strong class="b-price-schedule__value">$129.67</strong>
+                        <span class="text-danger b-price-schedule__change">-1.22%</span>
+                    </div>
+                    <div class="b-price-schedule__divider">|</div>
+                    <div class="b-price-schedule__item">
+                        <figure class="b-price-schedule__img-wrap">
+                            <img loading="lazy" width="20" height="20" src="https://ultramining.com/storage/631/632c16cde33b8.svg" alt="Ethereum Classic">
+                        </figure>
+                        <strong class="b-price-schedule__value">$21.30</strong>
+                        <span class="text-danger b-price-schedule__change">-2.94%</span>
+                    </div>
+                    <div class="b-price-schedule__divider">|</div>
+                    <div class="b-price-schedule__item">
+                        <figure class="b-price-schedule__img-wrap">
+                            <img loading="lazy" width="20" height="20" src="https://ultramining.com/storage/1036/63bd743585fac.svg" alt="Bitcoin">
+                        </figure>
+                        <strong class="b-price-schedule__value">$22 728.60</strong>
+                        <span class="text-danger b-price-schedule__change">-0.39%</span>
+                    </div>
+                    <div class="b-price-schedule__divider">|</div>
+                    <div class="b-price-schedule__item">
+                        <figure class="b-price-schedule__img-wrap">
+                            <img loading="lazy" width="20" height="20" src="https://ultramining.com/storage/468/62d7d2c57f875.svg" alt="Dogecoin">
+                        </figure>
+                        <strong class="b-price-schedule__value">$0.084550</strong>
+                        <span class="text-danger b-price-schedule__change">-2.4%</span>
+                    </div>
+                    <div class="b-price-schedule__divider">|</div>
+                    <div class="b-price-schedule__item">
+                        <figure class="b-price-schedule__img-wrap">
+                            <img loading="lazy" width="20" height="20" src="https://ultramining.com/storage/443/62d7bb652c878.svg" alt="Litecoin">
+                        </figure>
+                        <strong class="b-price-schedule__value">$87.80</strong>
+                        <span class="text-danger b-price-schedule__change">-1.06%</span>
+                    </div>
+                    <div class="b-price-schedule__divider">|</div>
+                    <div class="b-price-schedule__item">
+                        <figure class="b-price-schedule__img-wrap">
+                            <img loading="lazy" width="20" height="20" src="https://ultramining.com/storage/466/62d7d28d473cf.svg" alt="Bitcoin Cash">
+                        </figure>
+                        <strong class="b-price-schedule__value">$129.67</strong>
+                        <span class="text-danger b-price-schedule__change">-1.22%</span>
+                    </div>
+                    <div class="b-price-schedule__divider">|</div>
+                    <div class="b-price-schedule__item">
+                        <figure class="b-price-schedule__img-wrap">
+                            <img loading="lazy" width="20" height="20" src="https://ultramining.com/storage/631/632c16cde33b8.svg" alt="Ethereum Classic">
+                        </figure>
+                        <strong class="b-price-schedule__value">$21.30</strong>
+                        <span class="text-danger b-price-schedule__change">-2.94%</span>
+                    </div>
+                    <div class="b-price-schedule__divider">|</div>
+                    <div class="b-price-schedule__item">
+                        <figure class="b-price-schedule__img-wrap">
+                            <img loading="lazy" width="20" height="20" src="https://ultramining.com/storage/1036/63bd743585fac.svg" alt="Bitcoin">
+                        </figure>
+                        <strong class="b-price-schedule__value">$22 728.60</strong>
+                        <span class="text-danger b-price-schedule__change">-0.39%</span>
+                    </div>
+                    <div class="b-price-schedule__divider">|</div>
+                    <div class="b-price-schedule__item">
+                        <figure class="b-price-schedule__img-wrap">
+                            <img loading="lazy" width="20" height="20" src="https://ultramining.com/storage/468/62d7d2c57f875.svg" alt="Dogecoin">
+                        </figure>
+                        <strong class="b-price-schedule__value">$0.084550</strong>
+                        <span class="text-danger b-price-schedule__change">-2.4%</span>
+                    </div>
+                    <div class="b-price-schedule__divider">|</div>
+                    <div class="b-price-schedule__item">
+                        <figure class="b-price-schedule__img-wrap">
+                            <img loading="lazy" width="20" height="20" src="https://ultramining.com/storage/443/62d7bb652c878.svg" alt="Litecoin">
+                        </figure>
+                        <strong class="b-price-schedule__value">$87.80</strong>
+                        <span class="text-danger b-price-schedule__change">-1.06%</span>
+                    </div>
+                    <div class="b-price-schedule__divider">|</div>
+                    <div class="b-price-schedule__item">
+                        <figure class="b-price-schedule__img-wrap">
+                            <img loading="lazy" width="20" height="20" src="https://ultramining.com/storage/466/62d7d28d473cf.svg" alt="Bitcoin Cash">
+                        </figure>
+                        <strong class="b-price-schedule__value">$129.67</strong>
+                        <span class="text-danger b-price-schedule__change">-1.22%</span>
+                    </div>
+                    <div class="b-price-schedule__divider">|</div>
+                    <div class="b-price-schedule__item">
+                        <figure class="b-price-schedule__img-wrap">
+                            <img loading="lazy" width="20" height="20" src="https://ultramining.com/storage/631/632c16cde33b8.svg" alt="Ethereum Classic">
+                        </figure>
+                        <strong class="b-price-schedule__value">$21.30</strong>
+                        <span class="text-danger b-price-schedule__change">-2.94%</span>
+                    </div>
+                    <div class="b-price-schedule__divider">|</div>
+                    <div class="b-price-schedule__item">
+                        <figure class="b-price-schedule__img-wrap">
+                            <img loading="lazy" width="20" height="20" src="https://ultramining.com/storage/1036/63bd743585fac.svg" alt="Bitcoin">
+                        </figure>
+                        <strong class="b-price-schedule__value">$22 728.60</strong>
+                        <span class="text-danger b-price-schedule__change">-0.39%</span>
+                    </div>
+                    <div class="b-price-schedule__divider">|</div>
+                    <div class="b-price-schedule__item">
+                        <figure class="b-price-schedule__img-wrap">
+                            <img loading="lazy" width="20" height="20" src="https://ultramining.com/storage/468/62d7d2c57f875.svg" alt="Dogecoin">
+                        </figure>
+                        <strong class="b-price-schedule__value">$0.084550</strong>
+                        <span class="text-danger b-price-schedule__change">-2.4%</span>
+                    </div>
+                    <div class="b-price-schedule__divider">|</div>
+                    <div class="b-price-schedule__item">
+                        <figure class="b-price-schedule__img-wrap">
+                            <img loading="lazy" width="20" height="20" src="https://ultramining.com/storage/443/62d7bb652c878.svg" alt="Litecoin">
+                        </figure>
+                        <strong class="b-price-schedule__value">$87.80</strong>
+                        <span class="text-danger b-price-schedule__change">-1.06%</span>
+                    </div>
+                    <div class="b-price-schedule__divider">|</div>
+                    <div class="b-price-schedule__item">
+                        <figure class="b-price-schedule__img-wrap">
+                            <img loading="lazy" width="20" height="20" src="https://ultramining.com/storage/466/62d7d28d473cf.svg" alt="Bitcoin Cash">
+                        </figure>
+                        <strong class="b-price-schedule__value">$129.67</strong>
+                        <span class="text-danger b-price-schedule__change">-1.22%</span>
+                    </div>
+                    <div class="b-price-schedule__divider">|</div>
+                    <div class="b-price-schedule__item">
+                        <figure class="b-price-schedule__img-wrap">
+                            <img loading="lazy" width="20" height="20" src="https://ultramining.com/storage/631/632c16cde33b8.svg" alt="Ethereum Classic">
+                        </figure>
+                        <strong class="b-price-schedule__value">$21.30</strong>
+                        <span class="text-danger b-price-schedule__change">-2.94%</span>
+                    </div>
+                    <div class="b-price-schedule__divider">|</div>
+                </a>
+            </div>
+        </div>
+        <div class="filter">
+    <div class="filter__block">
+        <div class="filter__button">
+            <div class="filter__title">
+                <div class="selectChanges" data-val="RUB">RUB</div>
+                <div></div>
+            </div>
+            <div class="filter__content">
+                <div class="filter__select" data-val="RUB">RUB</div>
+                <div class="filter__select" data-val="USD">USD</div>
+                <div class="filter__select" data-val="EUR">EUR</div>
+                <div class="filter__select" data-val="GBP">GBP</div>
+                <div class="filter__select" data-val="CNY">CNY</div>
+            </div>
+        </div>
+        <div class="checkbox active">
+            <input type="checkbox" id="verifed" value="verifed" checked>
+            <label for="verifed">VERIFIED only
+                <img loading="lazy" src="./img/icons/circle-wavy-check.svg" alt="check">
+            </label>
+        </div>
+        <div class="filter__button active">
+            <div class="filter__title">
+                <div>LOCATION <span>(3)</span></div>
+                <div></div>
+            </div>
+            <div class="filter__content">
+                <details>
+                    <summary>
+                        <div>Countries</div>
+                        <div></div>
+                    </summary>
+                    <div class="filter__details">
+                        <div class="filter__checkbox">
+                            <input type="checkbox" id="Armenia" value="Armenia">
+                            <label for="Armenia">Armenia</label>
+                        </div>
+                        <div class="filter__checkbox">
+                            <input type="checkbox" id="Georgia" value="Georgia">
+                            <label for="Georgia">Georgia</label>
+                        </div>
+                        <div class="filter__checkbox">
+                            <input type="checkbox" id="Kazakhstan" value="Kazakhstan" checked>
+                            <label for="Kazakhstan">Kazakhstan</label>
+                        </div>
+                        <div class="filter__checkbox">
+                            <input type="checkbox" id="Russia" value="Russia">
+                            <label for="Russia">Russia</label>
+                        </div>
+                        <div class="filter__checkbox">
+                            <input type="checkbox" id="USA" value="USA">
+                            <label for="USA">USA</label>
+                        </div>
+                    </div>
+                </details>
+                <details>
+                    <summary>
+                        <div>Regions</div>
+                        <div></div>
+                    </summary>
+                    <div class="filter__details">
+                        <input type="search" class='location-search'>
+                        <div class="filter__checkbox">
+                            <input type="checkbox" id="Irkutsk" value="Irkutsk" checked>
+                            <label for="Irkutsk">Irkutsk</label>
+                        </div>
+                        <div class="filter__checkbox">
+                            <input type="checkbox" id="Moscow" value="Moscow" checked>
+                            <label for="Moscow">Moscow</label>
+                        </div>
+                    </div>
+                </details>
+            </div>
+        </div>
+        <div class="filter__button">
+            <div class="filter__title">
+                <div>PRICE <span>(0)</span></div>
+                <div></div>
+            </div>
+            <div class="filter__content">
+                <div class="filter__range">
+                    <label for="per-kw">PER KW</label>
+                    <input class="myRange" type="range" id="per-kw" name="per-kw" min="0" max="6" step=".1" value="4.4">
+                    <div>
+                        <div>0</div>
+                        <div>2</div>
+                        <div>4</div>
+                        <div>6</div>
+                    </div>
+                </div>
+                <button class="buttonSelect"><span>0 — 4</span><span> RUB / KW</span></button>
+            </div>
+        </div>
+        <div class="filter__button">
+            <div class="filter__title">
+                <div>energy type <span>(0)</span></div>
+                <div></div>
+            </div>
+            <div class="filter__content">
+                <div class="filter__content--title">energy type</div>
+                <div class="filter__checkbox">
+                    <input type="checkbox" id="Thermal" value="Thermal">
+                    <label for="Thermal">Thermal</label>
+                </div>
+                <div class="filter__checkbox">
+                    <input type="checkbox" id="Nuclear" value="Nuclear">
+                    <label for="Nuclear">Nuclear</label>
+                </div>
+                <div class="filter__checkbox">
+                    <input type="checkbox" id="Electrical" value="Electrical" checked>
+                    <label for="Electrical">Electrical</label>
+                </div>
+                <div class="filter__checkbox">
+                    <input type="checkbox" id="Wind" value="Wind">
+                    <label for="Wind">Wind</label>
+                </div>
+                <div class="filter__checkbox">
+                    <input type="checkbox" id="Unspecified" value="Unspecified">
+                    <label for="Unspecified">Unspecified</label>
+                </div>
+            </div>
+        </div>
+        <div class="filter__button">
+            <div class="filter__title">
+                <div>min. amount <span>(0)</span></div>
+                <div></div>
+            </div>
+            <div class="filter__content">
+                <div class="filter__range">
+                    <label for="devices">Devices</label>
+                    <input class="myRange" type="range" id="devices" name="devices" min="1" max="90" step="1"
+                           value="62">
+                    <div>
+                        <div>0</div>
+                        <div>30</div>
+                        <div>60</div>
+                        <div>90</div>
+                    </div>
+                </div>
+                <button class="buttonSelect"><span>1 — 35</span><span> Devices</span></button>
+            </div>
+        </div>
+        <div class="filter__button">
+            <div class="filter__title">
+                <div>total capacity <span>(0)</span></div>
+                <div></div>
+            </div>
+            <div class="filter__content">
+                <div class="filter__range">
+                    <label for="devices">MW</label>
+                    <input class="myRange" type="range" id="MW" name="MW" min="0" max="15" step=".1" value="10">
+                    <div>
+                        <div>0</div>
+                        <div>5</div>
+                        <div>10</div>
+                        <div>15</div>
+                    </div>
+                </div>
+                <button class="buttonSelect"><span>0.1 — 10</span><span> MW</span></button>
+            </div>
+        </div>
+        <div class="filter__button">
+            <div class="filter__title">
+                <div>terms <span>(0)</span></div>
+                <div></div>
+            </div>
+            <div class="filter__content">
+                <div class="filter__content--title">terms</div>
+                <div class="filter__checkbox">
+                    <input type="checkbox" id="Paperwork" value="Paperwork">
+                    <label for="Paperwork">Paperwork</label>
+                </div>
+                <div class="filter__checkbox">
+                    <input type="checkbox" id="Private" value="Private">
+                    <label for="Private">Private area</label>
+                </div>
+                <div class="filter__checkbox">
+                    <input type="checkbox" id="Tech" value="Tech" checked>
+                    <label for="Tech">Tech support</label>
+                </div>
+                <div class="filter__checkbox">
+                    <input type="checkbox" id="Maintenance" value="Maintenance">
+                    <label for="Maintenance">Maintenance & Repair</label>
+                </div>
+                <div class="filter__checkbox">
+                    <input type="checkbox" id="Security" value="Security">
+                    <label for="Security">Security</label>
+                </div>
+                <div class="filter__checkbox">
+                    <input type="checkbox" id="Logistics" value="Logistics">
+                    <label for="Logistics">Logistics</label>
+                </div>
+            </div>
+        </div>
+        <div class="filter__close">
+            <img loading="lazy" src="https://ultramining.com/default/img/icons/close.svg" alt="">
+        </div>
+        <div>
+            <button class="data-button blue">APPLY</button>
+            <button class="data-button clear">CLEAR ALL</button>
+        </div>
+    </div>
+</div>
+    </div>
+</header>
+    <main class="main-global">
+        <div id="content" class="container">
+    <div class="data-centers">
+        <div class="data-centers__block">
+            <div class="b-page-header" style="margin-bottom: 0"><!-- Изменить исходные стили-->
+    <ol class="breadcrumb" itemscope="" itemtype="https://schema.org/BreadcrumbList">
+        <li class="breadcrumb-item">
+            <a href="https://ultramining.com/">HOME</a>
+        </li>
+        <li class="breadcrumb-item active" itemprop="itemListElement" itemscope=""
+            itemtype="http://schema.org/ListItem">
+            <a href="https://ultramining.com/data-centers/" itemprop="item">DATA CENTERS
+                <meta itemprop="name" content="Дата центры">
+                <meta itemprop="position" content="1">
+            </a>
+        </li>
+    </ol>
+    <div class="row">
+        <div class="col-md-8 col-lg-7 col-xxl-6"><!-- Изменить исходные стили-->
+            <h1 class="b-page-header__title" style="letter-spacing: 1.7px;margin-bottom: 21px">
+                Data Centers
+            </h1>
+        </div>
+    </div>
+</div>
+
+                <div class="data-centers__wrapper">
+    <div class="data-centers__sort">
+        <div>Sort by:</div>
+        <div class="filter__default">
+            <div class="filter__title">
+                <div class="defaultChanges" data-val="default">default</div>
+                <div></div>
+            </div>
+            <div class="filter__content">
+                <div class="filter__select" data-val="default">по умолчанию</div>
+                <div class="filter__select" data-val="price">по цене</div>
+                <div class="filter__select" data-val="power">по мощности</div>
+                <div class="filter__select" data-val="rating">по рейтингу</div>
+                <div class="filter__select" data-val="feedback">по отзывам</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="data-centers__filter">
+        <button class="data-button tran filters"><div></div>FILTERS</button>
+    </div>
+
+    <div class="data-centers__find">
+        <button class="data-button blue"><div></div>help me find a data center</button>
+    </div>
+
+    <div class="data-centers__expand">
+        <button class="data-button expand"><div></div></button>
+    </div>
+
+    <div class="data-centers__add">
+        <button class="data-button blue"><div></div>add data center</button>
+    </div>
+
+    <div class="data-centers__but">
+        <button class="active"><div></div></button>
+        <button><div></div></button>
+    </div>
+</div>
+
+            <div class="data-card">
+                <div class="data-card__block">
+    <div class="data-card__item">
+        <div class="data-card__img">
+            <img src="./img/andre/card.jpg" alt="card">
+            <div class="check-group">
+                <div class="card-wrapper-checkbox">
+                    <input type="checkbox" id="xxx" value="Russia">
+                    <label for="xxx"></label>
+                </div>
+            </div>
+            <div class="card-wrapper-group">
+                <div class="card-wrapper-title">
+                    <div>Cluster Mining</div>
+                    <div class="checked"></div>
+                    <div class="leaf green-status"></div>
+                </div>
+                <div class="card-wrapper-subtitle">
+                    <div class="star"></div>
+                    <div>4.4</div>
+                </div>
+            </div>
+            <button class="lightning">
+                <div></div>
+            </button>
+        </div>
+        <div class="data-card__content">
+            <div class="data-card__group--buttons">
+                <button class="info-card">
+                    <div></div>
+                </button>
+                <button class="access">
+                    <div></div>
+                </button>
+                <button class="logistics">
+                    <div></div>
+                </button>
+                <button class="repair">
+                    <div></div>
+                </button>
+                <button class="system-monitoring">
+                    <div></div>
+                </button>
+                <!--<button class="crypto"><div></div></button>-->
+                <!--<button class="paperwork"><div></div></button>-->
+                <!--<button class="security"><div></div></button>-->
+                <!--<button class="selling"><div></div></button>-->
+                <!--<button class="support"><div></div></button>-->
+            </div>
+            <div class="data-card__group--content">
+                <div class="data-card__content--geo">
+                    <div></div>
+                    <div>Irkutsk, Russia</div>
+                </div>
+                <div class="data-card__content--price">
+                    <div>Price</div>
+                    <div>
+                        <div>0.039$</div>
+                        <div>kW/h</div>
+                    </div>
+                </div>
+                <div class="data-card__content--power">
+                    <div>Power Capacity</div>
+                    <div>
+                        <div>180</div>
+                        <div>MW</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="data-card__item">
+        <div class="data-card__img">
+            <img src="./img/andre/card.jpg" alt="card">
+            <div class="check-group">
+                <div class="card-wrapper-checkbox">
+                    <input type="checkbox" id="xxxx" value="Russia" checked>
+                    <label for="xxxx"></label>
+                </div>
+            </div>
+            <div class="card-wrapper-group">
+                <div class="card-wrapper-title">
+                    <div>Cluster Mining</div>
+                    <div class="checked white-status"></div>
+                    <div class="leaf green-status"></div>
+                </div>
+                <div class="card-wrapper-subtitle">
+                    <div class="star"></div>
+                    <div>4.4</div>
+                </div>
+            </div>
+            <button class="lightning">
+                <div></div>
+            </button>
+        </div>
+        <div class="data-card__content">
+            <div class="data-card__group--buttons">
+                <button class="info-card">
+                    <div></div>
+                </button>
+                <button class="system-monitoring">
+                    <div></div>
+                </button>
+                <button class="selling">
+                    <div></div>
+                </button>
+
+            </div>
+            <div class="data-card__group--content">
+                <div class="data-card__content--geo">
+                    <div></div>
+                    <div>Irkutsk, Russia</div>
+                </div>
+                <div class="data-card__content--price">
+                    <div>Price</div>
+                    <div>
+                        <div>0.039$</div>
+                        <div>kW/h</div>
+                    </div>
+                </div>
+                <div class="data-card__content--power">
+                    <div>Power Capacity</div>
+                    <div>
+                        <div>180</div>
+                        <div>MW</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="data-card__item no-image">
+        <div class="data-card__img">
+            <img src="./img/andre/card.jpg" alt="card">
+            <div class="check-group">
+                <div class="card-wrapper-checkbox">
+                    <input type="checkbox" id="x9" value="Russia">
+                    <label for="x9"></label>
+                </div>
+            </div>
+            <div class="card-wrapper-group">
+                <div class="card-wrapper-title">
+                    <div>Cluster Mining</div>
+                    <div class="checked"></div>
+                    <div class="leaf green-status"></div>
+                </div>
+                <div class="card-wrapper-subtitle">
+                    <div class="star"></div>
+                    <div>4.4</div>
+                </div>
+            </div>
+            <button class="lightning">
+                <div></div>
+            </button>
+        </div>
+        <div class="data-card__content">
+            <div class="data-card__group--buttons">
+                <button class="info-card">
+                    <div></div>
+                </button>
+                <button class="access">
+                    <div></div>
+                </button>
+                <button class="logistics">
+                    <div></div>
+                </button>
+                <button class="repair">
+                    <div></div>
+                </button>
+                <button class="system-monitoring">
+                    <div></div>
+                </button>
+                <!--                                    <button class="crypto"><div></div></button>-->
+                <!--                                    <button class="paperwork"><div></div></button>-->
+                <!--                                    <button class="security"><div></div></button>-->
+                <!--                                    <button class="selling"><div></div></button>-->
+                <!--                                    <button class="support"><div></div></button>-->
+            </div>
+            <div class="data-card__group--content">
+                <div class="data-card__content--geo">
+                    <div></div>
+                    <div>Irkutsk, Russia</div>
+                </div>
+                <div class="data-card__content--price">
+                    <div>Price</div>
+                    <div>
+                        <div>0.039$</div>
+                        <div>kW/h</div>
+                    </div>
+                </div>
+                <div class="data-card__content--power">
+                    <div>Power Capacity</div>
+                    <div>
+                        <div>180</div>
+                        <div>MW</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="data-card__item">
+        <div class="data-card__img">
+            <img src="./img/andre/card.jpg" alt="card">
+            <div class="check-group">
+                <div class="card-wrapper-checkbox">
+                    <input type="checkbox" id="xxxxx" value="Russia">
+                    <label for="xxxxx"></label>
+                </div>
+            </div>
+            <div class="card-wrapper-group">
+                <div class="card-wrapper-title">
+                    <div>Cluster Mining</div>
+                    <div class="checked"></div>
+                    <div class="leaf green-status"></div>
+                </div>
+                <div class="card-wrapper-subtitle">
+                    <div class="star"></div>
+                    <div>4.4</div>
+                </div>
+            </div>
+            <button class="lightning">
+                <div></div>
+            </button>
+        </div>
+        <div class="data-card__content">
+            <div class="data-card__group--buttons">
+                <button class="info-card">
+                    <div></div>
+                </button>
+                <button class="access">
+                    <div></div>
+                </button>
+                <button class="logistics">
+                    <div></div>
+                </button>
+                <button class="repair">
+                    <div></div>
+                </button>
+                <button class="system-monitoring">
+                    <div></div>
+                </button>
+                <!--                                    <button class="crypto"><div></div></button>-->
+                <!--                                    <button class="paperwork"><div></div></button>-->
+                <!--                                    <button class="security"><div></div></button>-->
+                <!--                                    <button class="selling"><div></div></button>-->
+                <!--                                    <button class="support"><div></div></button>-->
+            </div>
+            <div class="data-card__group--content">
+                <div class="data-card__content--geo">
+                    <div></div>
+                    <div>Irkutsk, Russia</div>
+                </div>
+                <div class="data-card__content--price">
+                    <div>Price</div>
+                    <div>
+                        <div>0.039$</div>
+                        <div>kW/h</div>
+                    </div>
+                </div>
+                <div class="data-card__content--power">
+                    <div>Power Capacity</div>
+                    <div>
+                        <div>180</div>
+                        <div>MW</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="data-card__item">
+        <div class="data-card__img">
+            <img src="./img/andre/card.jpg" alt="card">
+            <div class="check-group">
+                <div class="card-wrapper-checkbox">
+                    <input type="checkbox" id="xxxxxx" value="Russia">
+                    <label for="xxxxxx"></label>
+                </div>
+            </div>
+            <div class="card-wrapper-group">
+                <div class="card-wrapper-title">
+                    <div>Cluster Mining</div>
+                    <div class="checked"></div>
+                    <div class="leaf green-status"></div>
+                </div>
+                <div class="card-wrapper-subtitle">
+                    <div class="star"></div>
+                    <div>4.4</div>
+                </div>
+            </div>
+            <button class="lightning">
+                <div></div>
+            </button>
+        </div>
+        <div class="data-card__content">
+            <div class="data-card__group--buttons">
+                <button class="info-card">
+                    <div></div>
+                </button>
+                <button class="access">
+                    <div></div>
+                </button>
+                <button class="repair">
+                    <div></div>
+                </button>
+                <button class="system-monitoring">
+                    <div></div>
+                </button>
+            </div>
+            <div class="data-card__group--content">
+                <div class="data-card__content--geo">
+                    <div></div>
+                    <div>Irkutsk, Russia</div>
+                </div>
+                <div class="data-card__content--price">
+                    <div>Price</div>
+                    <div>
+                        <div>0.039$</div>
+                        <div>kW/h</div>
+                    </div>
+                </div>
+                <div class="data-card__content--power">
+                    <div>Power Capacity</div>
+                    <div>
+                        <div>180</div>
+                        <div>MW</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="data-card__item">
+        <div class="data-card__img">
+            <img src="./img/andre/card.jpg" alt="card">
+            <div class="check-group">
+                <div class="card-wrapper-checkbox">
+                    <input type="checkbox" id="xxxxxxx" value="Russia">
+                    <label for="xxxxxxx"></label>
+                </div>
+            </div>
+            <div class="card-wrapper-group">
+                <div class="card-wrapper-title">
+                    <div>Cluster Mining</div>
+                    <div class="checked"></div>
+                    <div class="leaf green-status"></div>
+                </div>
+                <div class="card-wrapper-subtitle">
+                    <div class="star"></div>
+                    <div>4.4</div>
+                </div>
+            </div>
+            <button class="lightning">
+                <div></div>
+            </button>
+        </div>
+        <div class="data-card__content">
+            <div class="data-card__group--buttons">
+                <button class="info-card">
+                    <div></div>
+                </button>
+                <button class="access">
+                    <div></div>
+                </button>
+                <button class="logistics">
+                    <div></div>
+                </button>
+                <button class="repair">
+                    <div></div>
+                </button>
+                <button class="system-monitoring">
+                    <div></div>
+                </button>
+                <!--                                    <button class="crypto"><div></div></button>-->
+                <!--                                    <button class="paperwork"><div></div></button>-->
+                <!--                                    <button class="security"><div></div></button>-->
+                <!--                                    <button class="selling"><div></div></button>-->
+                <!--                                    <button class="support"><div></div></button>-->
+            </div>
+            <div class="data-card__group--content">
+                <div class="data-card__content--geo">
+                    <div></div>
+                    <div>Irkutsk, Russia</div>
+                </div>
+                <div class="data-card__content--price">
+                    <div>Price</div>
+                    <div>
+                        <div>0.039$</div>
+                        <div>kW/h</div>
+                    </div>
+                </div>
+                <div class="data-card__content--power">
+                    <div>Power Capacity</div>
+                    <div>
+                        <div>180</div>
+                        <div>MW</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="data-card__item">
+        <div class="data-card__img">
+            <img src="./img/andre/card.jpg" alt="card">
+            <div class="check-group">
+                <div class="card-wrapper-checkbox">
+                    <input type="checkbox" id="x7" value="Russia">
+                    <label for="x7"></label>
+                </div>
+            </div>
+            <div class="card-wrapper-group">
+                <div class="card-wrapper-title">
+                    <div>Cluster Mining</div>
+                    <div class="checked"></div>
+                    <div class="leaf green-status"></div>
+                </div>
+                <div class="card-wrapper-subtitle">
+                    <div class="star"></div>
+                    <div>4.4</div>
+                </div>
+            </div>
+            <button class="lightning">
+                <div></div>
+            </button>
+        </div>
+        <div class="data-card__content">
+            <div class="data-card__group--buttons">
+                <button class="info-card">
+                    <div></div>
+                </button>
+                <button class="access">
+                    <div></div>
+                </button>
+                <button class="logistics">
+                    <div></div>
+                </button>
+                <button class="repair">
+                    <div></div>
+                </button>
+                <button class="system-monitoring">
+                    <div></div>
+                </button>
+                <!--                                    <button class="crypto"><div></div></button>-->
+                <!--                                    <button class="paperwork"><div></div></button>-->
+                <!--                                    <button class="security"><div></div></button>-->
+                <!--                                    <button class="selling"><div></div></button>-->
+                <!--                                    <button class="support"><div></div></button>-->
+            </div>
+            <div class="data-card__group--content">
+                <div class="data-card__content--geo">
+                    <div></div>
+                    <div>Irkutsk, Russia</div>
+                </div>
+                <div class="data-card__content--price">
+                    <div>Price</div>
+                    <div>
+                        <div>0.039$</div>
+                        <div>kW/h</div>
+                    </div>
+                </div>
+                <div class="data-card__content--power">
+                    <div>Power Capacity</div>
+                    <div>
+                        <div>180</div>
+                        <div>MW</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="data-card__item">
+        <div class="data-card__img">
+            <img src="./img/andre/card.jpg" alt="card">
+            <div class="check-group">
+                <div class="card-wrapper-checkbox">
+                    <input type="checkbox" id="x8" value="Russia">
+                    <label for="x8"></label>
+                </div>
+            </div>
+            <div class="card-wrapper-group">
+                <div class="card-wrapper-title">
+                    <div>Cluster Mining</div>
+                    <div class="checked"></div>
+                    <div class="leaf green-status"></div>
+                </div>
+                <div class="card-wrapper-subtitle">
+                    <div class="star"></div>
+                    <div>4.4</div>
+                </div>
+            </div>
+            <button class="lightning">
+                <div></div>
+            </button>
+        </div>
+        <div class="data-card__content">
+            <div class="data-card__group--buttons">
+                <button class="info-card">
+                    <div></div>
+                </button>
+                <button class="access">
+                    <div></div>
+                </button>
+                <button class="logistics">
+                    <div></div>
+                </button>
+                <button class="repair">
+                    <div></div>
+                </button>
+                <button class="system-monitoring">
+                    <div></div>
+                </button>
+                <!--                                    <button class="crypto"><div></div></button>-->
+                <!--                                    <button class="paperwork"><div></div></button>-->
+                <!--                                    <button class="security"><div></div></button>-->
+                <!--                                    <button class="selling"><div></div></button>-->
+                <!--                                    <button class="support"><div></div></button>-->
+            </div>
+            <div class="data-card__group--content">
+                <div class="data-card__content--geo">
+                    <div></div>
+                    <div>Irkutsk, Russia</div>
+                </div>
+                <div class="data-card__content--price">
+                    <div>Price</div>
+                    <div>
+                        <div>0.039$</div>
+                        <div>kW/h</div>
+                    </div>
+                </div>
+                <div class="data-card__content--power">
+                    <div>Power Capacity</div>
+                    <div>
+                        <div>180</div>
+                        <div>MW</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="data-card__item no-image">
+        <div class="data-card__img">
+            <img src="./img/andre/card.jpg" alt="card">
+            <div class="check-group">
+                <div class="card-wrapper-checkbox">
+                    <input type="checkbox" id="x10" value="Russia">
+                    <label for="x10"></label>
+                </div>
+            </div>
+            <div class="card-wrapper-group">
+                <div class="card-wrapper-title">
+                    <div>Cluster Mining</div>
+                    <div class="checked"></div>
+                    <div class="leaf green-status"></div>
+                </div>
+                <div class="card-wrapper-subtitle">
+                    <div class="star"></div>
+                    <div>4.4</div>
+                </div>
+            </div>
+            <button class="lightning">
+                <div></div>
+            </button>
+        </div>
+        <div class="data-card__content">
+            <div class="data-card__group--buttons">
+                <button class="info-card">
+                    <div></div>
+                </button>
+                <button class="access">
+                    <div></div>
+                </button>
+                <button class="logistics">
+                    <div></div>
+                </button>
+                <button class="repair">
+                    <div></div>
+                </button>
+                <button class="system-monitoring">
+                    <div></div>
+                </button>
+                <!--                                    <button class="crypto"><div></div></button>-->
+                <!--                                    <button class="paperwork"><div></div></button>-->
+                <!--                                    <button class="security"><div></div></button>-->
+                <!--                                    <button class="selling"><div></div></button>-->
+                <!--                                    <button class="support"><div></div></button>-->
+            </div>
+            <div class="data-card__group--content">
+                <div class="data-card__content--geo">
+                    <div></div>
+                    <div>Irkutsk, Russia</div>
+                </div>
+                <div class="data-card__content--price">
+                    <div>Price</div>
+                    <div>
+                        <div>0.039$</div>
+                        <div>kW/h</div>
+                    </div>
+                </div>
+                <div class="data-card__content--power">
+                    <div>Power Capacity</div>
+                    <div>
+                        <div>180</div>
+                        <div>MW</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                <div class="data-map">
+                    <div id="page-map"></div>
+                </div>
+            </div>
+            <div class="data-centers__show">
+                <button class="data-button showMap active"><div></div>SHOW MAP</button>
+                <button class="data-button showList"><div></div>SHOW LIST</button>
+            </div>
+        </div>
+    </div>
+</div>
+    </main>
+    <div class="data-compare">
+    <div class="container">
+        <div class="data-compare__block">
+            <div class="data-compare__title">
+                <div>Compare list</div>
+                <div class="data-compare__clear"><div></div>Clear all</div>
+            </div>
+            <div class="data-compare__cards">
+                <div>
+                    <div class="data-compare__item">
+                        <div class="data-compare__item--block">
+                            <div class="data-compare__item--img"></div>
+                            <div class="data-compare__item--content">
+                                <div>MYRIG</div>
+                                <div>
+                                    <div></div>
+                                    <div><span>Russia</span><span>, Irkutsk + 2 more</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="data-compare__item--close">
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="data-compare__item">
+                        <div class="data-compare__item--block">
+                            <div class="data-compare__item--img"></div>
+                            <div class="data-compare__item--content">
+                                <div>MYRIG</div>
+                                <div>
+                                    <div></div>
+                                    <div><span>Kazakhstan</span><span>, Ekibastuz</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="data-compare__item--close">
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="data-compare__item">
+                        <div class="data-compare__item--block">
+                            <div class="data-compare__item--img"></div>
+                            <div class="data-compare__item--content">
+                                <div>MYRIG</div>
+                                <div>
+                                    <div></div>
+                                    <div><span>Russia</span><span>, Irkutsk + 2 more</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="data-compare__item--close">
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="data-compare__item">
+                        <div class="data-compare__item--block">
+                            <div class="data-compare__item--img"></div>
+                            <div class="data-compare__item--content">
+                                <div>MYRIG</div>
+                                <div>
+                                    <div></div>
+                                    <div><span>Russia</span><span>, Irkutsk + 2 more</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="data-compare__item--close">
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="data-compare__button">
+                <button class="data-button blue"></button>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="modal fade b-theme-modal" id="modal-data-center" aria-modal="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="b-theme-modal__close" data-dismiss="modal">
+                <img loading="lazy" src="https://ultramining.com/default/img/icons/close.svg" alt="">
+            </div>
+            <div class="modal-body">
+                <form id="data-center-form" action="https://ultramining.com/data-centers/" method="post" class="b-theme-form">
+                    <input type="hidden" name="_token" value="9rGxLJxaqgqhRFN7ob3cBrZjsx69x8osHYczAJQw">                        <div class="b-heading text-center mt-0">Добавить дата центр</div>
+                    <div class="form-group">
+                        <input placeholder="Название*" type="text" name="name" class="form-control" id="input-name">
+                    </div>
+                    <div class="form-group">
+                        <input placeholder="Email*" type="email" name="email" class="form-control" id="input-email">
+                    </div>
+                    <div class="form-group">
+                        <input placeholder="Геопозиция*" type="text" name="location" class="form-control" id="input-location">
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Описание" name="text" class="form-control" id="input-text"></textarea>
+                    </div>
+                    <div class="text-center">
+                        <script src="https://www.google.com/recaptcha/api.js?" async="" defer=""></script>
+
+                        <div><div class="grecaptcha-badge" data-style="bottomright" style="width: 256px; height: 60px; position: fixed; visibility: hidden; display: block; transition: right 0.3s ease 0s; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;"><div class="grecaptcha-logo"><iframe title="reCAPTCHA" src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LfrF6khAAAAAJlvhvyj0jugbTKjfWCjlvj5EeuW&amp;co=aHR0cHM6Ly91bHRyYW1pbmluZy5jb206NDQz&amp;hl=ru&amp;v=gEr-ODersURoIfof1hiDm7R5&amp;size=invisible&amp;cb=fq0wipb5xj4f" width="256" height="60" role="presentation" name="a-r38jb3c9pezd" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><div class="grecaptcha-error"></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div><button class="btn btn-primary btn-lg b-theme-form__btn g-recaptcha" data-callback="dataCenterForm" data-sitekey="6LfrF6khAAAAAJlvhvyj0jugbTKjfWCjlvj5EeuW">Добавить</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="modal fade b-theme-modal" id="data-modal-compare" style="display: none" aria-modal="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="b-theme-modal__close" data-dismiss="modal">
+                <img loading="lazy" src="https://ultramining.com/default/img/icons/close.svg" alt="">
+            </div>
+            <div class="modal-body">
+                <div class="data-modal__buttons">
+                    <button class="data-button tran">CLEAR ALL</button>
+                    <select class="select-add">
+                        <option value="RUB" selected>RUB</option>
+                        <option value="USD">USD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="GBP">GBP</option>
+                        <option value="CNY">CNY</option>
+                    </select>
+                </div>
+                <div class="data-modal">
+                    <div class="data-modal__compare">
+                        <div class="data-modal__compare--default">
+                            <div class="image-campare"></div>
+                            <div class="geo-compare">Location</div>
+                            <div class="price-compare">Price</div>
+                            <div class="capacity-compare">Total capacity, MW</div>
+                            <div class="amount-compare">Min amount, devices</div>
+                            <div class="energy-compare">Energy Type</div>
+                            <div class="uptime-compare">Uptime</div>
+                            <div class="verified-compare">Verified</div>
+                            <div class="buttons-compare"></div>
+                        </div>
+                        <div class="data-modal__compare--item">
+                            <div class="image-compare">
+                                <img src="./img/andre/card-compare.jpg" alt="card-compare">
+                                <button>remove</button>
+                            </div>
+                            <div class="geo-compare">
+                                <div></div>
+                                <span>Russia</span>, <span>Moscow</span>
+                            </div>
+                            <div class="price-compare active"><span>0.24 RUB </span><span>kW/h</span></div>
+                            <div class="capacity-compare">2</div>
+                            <div class="amount-compare">120</div>
+                            <div class="energy-compare">Hydro</div>
+                            <div class="uptime-compare">98%</div>
+                            <div class="verified-compare">
+                                <div></div>
+                            </div>
+                            <div class="buttons-compare"><button class="data-button blue">Request placement</button></div>
+                        </div>
+                        <div class="data-modal__compare--item">
+                            <div class="image-compare">
+                                <img src="./img/andre/card-compare.jpg" alt="card-compare">
+                                <button>remove</button>
+                            </div>
+                            <div class="geo-compare">
+                                <div></div>
+                                <span>Russia</span>, <span>Moscow</span>
+                            </div>
+                            <div class="price-compare"><span>0.24 RUB </span><span>kW/h</span></div>
+                            <div class="capacity-compare">2</div>
+                            <div class="amount-compare">120</div>
+                            <div class="energy-compare">Hydro</div>
+                            <div class="uptime-compare">98%</div>
+                            <div class="verified-compare">
+                                <div></div>
+                            </div>
+                            <div class="buttons-compare"><button class="data-button blue">Request placement</button></div>
+                        </div>
+                        <div class="data-modal__compare--item">
+                            <div class="image-compare">
+                                <img src="./img/andre/card-compare.jpg" alt="card-compare">
+                                <button>remove</button>
+                            </div>
+                            <div class="geo-compare">
+                                <div></div>
+                                <span>Russia</span>, <span>Moscow</span>
+                            </div>
+                            <div class="price-compare"><span>0.24 RUB </span><span>kW/h</span></div>
+                            <div class="capacity-compare">2</div>
+                            <div class="amount-compare">120</div>
+                            <div class="energy-compare">Hydro</div>
+                            <div class="uptime-compare">98%</div>
+                            <div class="verified-compare">
+                                <div></div>
+                            </div>
+                            <div class="buttons-compare"><button class="data-button blue">Request placement</button></div>
+                        </div>
+                        <div class="data-modal__compare--item">
+                            <div class="image-compare">
+                                <img src="./img/andre/card-compare.jpg" alt="card-compare">
+                                <button>remove</button>
+                            </div>
+                            <div class="geo-compare">
+                                <div></div>
+                                <span>Russia</span>, <span>Moscow</span>
+                            </div>
+                            <div class="price-compare"><span>0.24 RUB </span><span>kW/h</span></div>
+                            <div class="capacity-compare">2</div>
+                            <div class="amount-compare">120</div>
+                            <div class="energy-compare">Hydro</div>
+                            <div class="uptime-compare">98%</div>
+                            <div class="verified-compare">
+                                <div></div>
+                            </div>
+                            <div class="buttons-compare"><button class="data-button blue">Request placement</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="modal fade b-theme-modal" id="data-modal-form" style="display: none" aria-modal="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="b-theme-modal__close" data-dismiss="modal">
+                <img loading="lazy" src="https://ultramining.com/default/img/icons/close.svg" alt="">
+            </div>
+            <div class="modal-body">
+                <div class="data-modal find">
+                    <div class="find-title">Help me find a data center</div>
+                    <div class="find-subtitle">I want to request a manager support</div>
+                    <form action="" method="get" class="data-modal__form">
+                        <div class="form-input">
+                            <label for="email">E-mail*</label>
+                            <input type="email" name="email" id="email" class="email-find" required placeholder="E-mail">
+                        </div>
+                        <div class="form-input">
+                            <label for="name">Phone / telegram / whatsapp</label>
+                            <input type="text" name="name" id="name" class="name-find" required placeholder="@nickname">
+                        </div>
+                        <div class="form-input">
+                            <label for="message">Message</label>
+                            <textarea name="" id="message" cols="30" rows="10" class="message-find" placeholder="Tell us about the amount of equipment, approximate location, or any other details you see fit." style="resize: none;"></textarea>
+                        </div>
+                        <div class="form-input">
+<!--                            <input type="submit" value="SUBMIT" class="send-find">-->
+                            <button class="data-button blue">SUBMIT</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="modal fade b-theme-modal" id="data-modal-request" style="display: none" aria-modal="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="b-theme-modal__close" data-dismiss="modal">
+                <img loading="lazy" src="https://ultramining.com/default/img/icons/close.svg" alt="">
+            </div>
+            <div class="modal-body">
+                <div class="data-modal find">
+                    <div class="find-title">Request assistance</div>
+                    <div class="find-subtitle">I want to request placement in <strong>[Data Center Name]</strong></div>
+                    <form action="" method="get" class="data-modal__form">
+                        <div class="form-input">
+                            <label for="email">E-mail*</label>
+                            <input type="email" name="email" id="email" class="email-find" required placeholder="E-mail">
+                        </div>
+                        <div class="form-input">
+                            <label for="name">Phone / telegram / whatsapp</label>
+                            <input type="text" name="name" id="name" class="name-find" required placeholder="@nickname">
+                        </div>
+                        <div class="form-input">
+                            <label for="message">Message</label>
+                            <textarea name="" id="message" cols="30" rows="10" class="message-find" placeholder="Tell us about the amount of equipment, approximate location, or any other details you see fit." style="resize: none;"></textarea>
+                        </div>
+                        <div class="form-input">
+<!--                            <input type="submit" value="" class="send-request">-->
+                            <button class="data-button blue">ADD DATA CENTER</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="modal fade b-theme-modal" id="data-modal-add" style="display: none" aria-modal="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="b-theme-modal__close" data-dismiss="modal">
+                <img loading="lazy" src="https://ultramining.com/default/img/icons/close.svg" alt="">
+            </div>
+            <div class="modal-body">
+                <div class="data-modal add">
+                    <div class="add-title">Add a data center</div>
+                    <div class="add-subtitle">Please provide details about your data center and your contact
+                        information.
+                    </div>
+                    <div class="add-details">Contact details</div>
+                    <div class="add-fields">Required fields</div>
+                    <form action="" method="get" class="data-modal__add">
+                        <div class="add-form-details">
+                            <div class="form-input">
+                                <label for="email">E-mail*</label>
+                                <input type="email" name="email" id="email" class="email-find" required
+                                       placeholder="E-mail">
+                            </div>
+                            <div class="form-input">
+                                <label for="name">Phone / telegram / whatsapp</label>
+                                <input type="text" name="name" id="name" class="name-find" required
+                                       placeholder="@nickname">
+                            </div>
+                        </div>
+                        <div class="add-details">Data Center Info</div>
+                        <div class="add-fields">You can add details yourself or our manager will contact you</div>
+                        <div class="add-another-location">
+                            <!-- Здесь добавить класс "active", чтоб отобразить блок -->
+                            <div class="add-another-block">
+                                <div>Data center in <span>[Irkutsk, Russia]</span></div>
+                                <div>
+                                    <button class="data-button blue"><div></div></button>
+                                    <button class="data-button remove"><div></div>Remove</button>
+                                </div>
+                            </div>
+                            <div class="add-fields">You can add details for another location here.</div>
+                        </div>
+                        <div class="add-form-info">
+                            <div class="left">
+                                <div class="form-input">
+                                    <label for="location">Location</label>
+                                    <input type="text" name="location" id="location" class="add-location" required>
+                                </div>
+                                <div class="form-input">
+                                    <label for="amount">Min Amount</label>
+                                    <div class="left-block">
+                                        <input type="text" name="amount" id="amount" class="add-amount" required>
+                                        <div>Please specify the min amount of devices for placement</div>
+                                    </div>
+                                </div>
+                                <div class="form-input">
+                                    <label for="price">Price</label>
+                                    <div class="left-block">
+                                        <div class="add-group-price">
+                                            <input type="text" name="price" id="price" class="add-price" required>
+                                            <select class="select-add">
+                                                <option value="kW/h" selected>kW/h</option>
+                                                <option value="USD">USD</option>
+                                                <option value="EUR">EUR</option>
+                                                <option value="GBP">GBP</option>
+                                                <option value="CNY">CNY</option>
+                                            </select>
+                                            <select class="select-add">
+                                                <option value="RUB" selected>RUB</option>
+                                                <option value="USD">USD</option>
+                                                <option value="EUR">EUR</option>
+                                                <option value="GBP">GBP</option>
+                                                <option value="CNY">CNY</option>
+                                            </select>
+                                        </div>
+                                        <div>Please enter the amount and select prefered type of payment</div>
+                                    </div>
+                                </div>
+
+                                <div class="form-input">
+                                    <label for="uploaded-file">Image</label>
+                                    <div class="left-block">
+                                        <div class="add-file-box">
+                                            <div class="file-upload">
+                                                <label>
+                                                    <div>
+                                                        <input type="file" name="file" onchange="getFileName ();" id="uploaded-file">
+                                                        <span id="file-name">Выберите файл</span>
+                                                        <div></div>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div>If possible, please attach am image of you data center</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="right-block">
+                                    <div class="right-block-title">Energy type</div>
+                                    <div class="filter__checkbox">
+                                        <input type="checkbox" id="Thermal" value="Thermal">
+                                        <label for="Thermal">Thermal</label>
+                                    </div>
+                                    <div class="filter__checkbox">
+                                        <input type="checkbox" id="Nuclear" value="Nuclear" checked>
+                                        <label for="Nuclear">Nuclear</label>
+                                    </div>
+                                    <div class="filter__checkbox">
+                                        <input type="checkbox" id="Electrical" value="Electrical">
+                                        <label for="Electrical">Electrical</label>
+                                    </div>
+                                    <div class="filter__checkbox">
+                                        <input type="checkbox" id="Wind" value="Wind">
+                                        <label for="Wind">Wind</label>
+                                    </div>
+                                    <div class="filter__checkbox">
+                                        <input type="checkbox" id="Unspecified" value="Unspecified">
+                                        <label for="Thermal">Unspecified</label>
+                                    </div>
+                                </div>
+                                <div class="right-block">
+                                    <div class="right-block-title">Terms</div>
+                                    <div class="filter__checkbox">
+                                        <input type="checkbox" id="Paperwork" value="Paperwork">
+                                        <label for="Paperwork">Paperwork</label>
+                                    </div>
+                                    <div class="filter__checkbox">
+                                        <input type="checkbox" id="Private" value="Private" checked>
+                                        <label for="Private">Private area</label>
+                                    </div>
+                                    <div class="filter__checkbox">
+                                        <input type="checkbox" id="Tech" value="Tech">
+                                        <label for="Tech">Tech support</label>
+                                    </div>
+                                    <div class="filter__checkbox">
+                                        <input type="checkbox" id="Maintenance" value="Maintenance">
+                                        <label for="Maintenance">Maintenance & Repair</label>
+                                    </div>
+                                    <div class="filter__checkbox">
+                                        <input type="checkbox" id="Security" value="Security">
+                                        <label for="Security">Security</label>
+                                    </div>
+                                    <div class="filter__checkbox">
+                                        <input type="checkbox" id="Logistics" value="Logistics">
+                                        <label for="Thermal">Logistics</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-input">
+                            <button class="data-button tran"><div></div>ADD ONE MORE LOCATION</button>
+                            <button class="data-button blue"><div></div>SUBMIT</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <footer class="b-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md">
+                <a href="https://ultramining.com/">
+                    <img loading="lazy" class="b-footer__logo" width="190" height="28" src="https://ultramining.com/default/img/logo.svg" alt="Ultramining">
+                </a>
+                <div class="b-footer__text">
+                    Напишите нам, если у вас возникли вопросы                                            <strong><a href="mailto:info@ultramining.com">info@ultramining.com</a></strong>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <ul class="list-unstyled b-footer__links">
+                    <li>
+                        <a href="https://ultramining.com/">Главная</a>
+                    </li>
+                    <li>
+                        <a href="https://ultramining.com/news/">Новости</a>
+                    </li>
+                    <li>
+                        <a href="https://ultramining.com/cloud-mining/">Облачный майнинг</a>
+                    </li>
+                    <li>
+                        <a href="https://ultramining.com/firmwares/">Прошивки</a>
+                    </li>
+                    <li>
+                        <a href="https://ultramining.com/data-centers/">Дата центры</a>
+                    </li>
+
+
+                </ul>
+            </div>
+            <div class="col-6 col-md-3 col-lg-auto">
+                <ul class="list-unstyled b-footer__links">
+                    <li>
+                        <a href="https://ultramining.com/crypto-calc/">Калькулятор</a>
+                    </li>
+                    <li>
+                        <a href="https://ultramining.com/crypto-converter/">Конвертер криптовалют</a>
+                    </li>
+                    <li>
+                        <a href="https://ultramining.com/hashrate-converter/">Конвертер хешрейта</a>
+                    </li>
+                    <li>
+                        <a href="https://ultramining.com/hardware/">Оборудование</a>
+                    </li>
+
+                    <li>
+                        <a href="https://ultramining.com/pages/about/">О редакции</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="b-footer__bot-box">
+            <div class="row align-items-center justify-content-center">
+                <div class="col">
+                    <strong>© 2023 Ultramining</strong>
+                </div>
+                <div class="col-12 col-md">
+                    <ul class="list-inline b-footer__social-network">
+                        <li class="list-inline-item">
+                            <a target="_blank" rel="nofollow" href="https://twitter.com/ultramining_com">
+                                <img loading="lazy" src="https://ultramining.com/default/img/icons/twitter.svg" alt="twitter">
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a target="_blank" rel="nofollow" href="https://discord.gg/bvDxbqgUuH">
+                                <img loading="lazy" src="https://ultramining.com/default/img/icons/discord.svg" alt="discord">
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a target="_blank" rel="nofollow" href="https://t.me/ultraminingcom">
+                                <img loading="lazy" src="https://ultramining.com/default/img/icons/telegram.svg" alt="telegram">
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://ultramining.com/rss/">
+                                <img loading="lazy" width="12" height="12" src="https://ultramining.com/default/img/icons/rss-feed.svg" alt="rss">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+<script src="js/script.min.js"></script>
+</body>
+</html>
